@@ -1,4 +1,4 @@
-== ShoppinMall
+== ShopingMall
 
 Rails e-commerce application where user should be able to add to cart and able to buy using any paypal sandbox payment method
 
