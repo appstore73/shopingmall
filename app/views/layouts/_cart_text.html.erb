@@ -1,0 +1,6 @@
+<%#= link_to "#{current_order.order_items.size} Items in Cart ( #{number_to_currency current_order.subtotal} )", cart_path, class: "btn btn-link" %>
+<%#= number_to_currency(current_cart.grand_total,  :unit => "&pound;") %>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Checkout>>
+<%= link_to "#{current_order.order_items.size} Items in Cart ( #{number_to_currency current_order.subtotal} )", checkout_cart_path, class: "btn btn-link" %>
+
+
+</div>

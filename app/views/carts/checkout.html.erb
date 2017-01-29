@@ -1,0 +1,91 @@
+<h1>Paypal payment</h1>
+<div class="container">
+	<div class="row-fluid">
+      <%= form_tag("/cart/payment", method: "post") do %>
+        <fieldset>
+          <div id="legend">
+            <legend class=""><strong>Total Amount</strong>  <%= "#{current_order.order_items.size}" %>
+            <strong>Number Item</strong>  <%=  "#{number_to_currency current_order.subtotal}" %>
+            <input type="hidden" value="<%= "#{current_order.subtotal}" %>" name="total_amount_due" >
+            </legend>
+          </div>
+
+          <!-- Name -->
+          <div class="control-group">
+            <label class="control-label"  for="username">Card Holder's Name</label>
+            <div class="controls">
+              <input type="text" id="username" name="username" placeholder="" class="input-xlarge" value="Joe Shopper">
+            </div>
+          </div>
+
+          <!-- Card Number -->
+          <div class="control-group">
+            <label class="control-label" for="email">Card Number</label>
+            <div class="controls">
+              <input type="text" id="email" name="credit_card_number" placeholder="" class="input-xlarge" value="4567516310777851">
+            </div>
+          </div>
+
+          <!-- Expiry-->
+          <div class="control-group">
+            <label class="control-label" for="password">Card Expiry Date</label>
+            <div class="controls">
+              <select class="span3" name="expiry_month" id="expiry_month">
+                <option></option>
+                <option value="01">Jan (01)</option>
+                <option value="02">Feb (02)</option>
+                <option value="03">Mar (03)</option>
+                <option value="04">Apr (04)</option>
+                <option value="05">May (05)</option>
+                <option value="06">June (06)</option>
+                <option value="07">July (07)</option>
+                <option value="08">Aug (08)</option>
+                <option value="09">Sep (09)</option>
+                <option value="10">Oct (10)</option>1
+                <option value="11" selected="selected">Nov (11)</option>
+                <option value="12">Dec (12)</option>
+              </select>
+              <select class="span2" name="expiry_year">
+                <option value="2013">2013</option>
+                <option value="2014">2014</option>
+                <option value="2015">2015</option>
+                <option value="2016">2016</option>
+                <option value="2017">2017</option>
+                <option value="2018"  selected="selected">2018</option>
+                <option value="2019">2019</option>
+                <option value="2020">2020</option>
+                <option value="2021">2021</option>
+								<option value="2022">2022</option>
+                <option value="2023">2023</option>
+              </select>
+            </div>
+          </div>
+
+          <!-- CVV -->
+          <div class="control-group">
+            <label class="control-label"  for="password_confirm">Card CVV</label>
+            <div class="controls">
+              <input type="password" id="password_confirm" name="cvv" placeholder="" class="span2" value="874">
+            </div>
+          </div>
+
+          <!-- Save card -->
+          <div class="control-group">
+            <div class="controls">
+              <label class="checkbox" for="save_card">
+
+              </label>
+            </div>
+          </div>
+
+          <!-- Submit -->
+          <div class="control-group">
+            <div class="controls">
+              <button class="btn btn-success">Pay Now BY Paypal</button>
+            </div>
+          </div>
+
+        </fieldset>
+      <% end %>
+    </div>
+</div>
