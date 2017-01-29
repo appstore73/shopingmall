@@ -1,3 +1,9 @@
-== ShoppingCartExampleApp
+== ShoppinMall
 
-See http://richonrails.com/articles/building-a-shopping-cart-in-ruby-on-rails for details
+Rails e-commerce application where user should be able to add to cart and able to buy using any paypal sandbox payment method
+
+bundle install
+rake db:create
+rake db:migrate
+rake db:seed
+Paymnet method Paypal
